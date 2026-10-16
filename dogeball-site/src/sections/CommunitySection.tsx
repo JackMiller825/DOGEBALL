@@ -23,9 +23,6 @@ function CommunityAction({ href, label, pending }: { href: string; label: string
 }
 
 export function CommunitySection() {
-  const xUrl = officialHttpUrl(siteConfig.xUrl);
-  const telegramUrl = officialHttpUrl(siteConfig.telegramUrl);
-
   return (
     <section className="community" id="community" aria-labelledby="community-title">
       <div className="container">
@@ -49,13 +46,6 @@ export function CommunitySection() {
               <CommunityAction href={siteConfig.xUrl} label="Follow on X" pending={placeholders.x} />
               <CommunityAction href={siteConfig.telegramUrl} label="Join Telegram" pending={placeholders.telegram} />
             </div>
-            {!xUrl || !telegramUrl ? (
-              <p className="pending-line">
-                {!xUrl ? <span>{placeholders.x}</span> : null}
-                {!xUrl && !telegramUrl ? <span aria-hidden="true"> · </span> : null}
-                {!telegramUrl ? <span>{placeholders.telegram}</span> : null}
-              </p>
-            ) : null}
           </div>
           <div className="community-art">
             <MascotImage alt="DOGEBALL mascot" />

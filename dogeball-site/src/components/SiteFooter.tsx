@@ -1,5 +1,5 @@
 import { assetPaths, navItems, placeholders, siteConfig } from "../config/site.ts";
-import { configuredContractAddress, officialHttpUrl } from "../lib/official.ts";
+import { officialHttpUrl } from "../lib/official.ts";
 
 function FooterSocial({ href, label, pending }: { href: string; label: string; pending: string }) {
   const url = officialHttpUrl(href);
@@ -20,11 +20,7 @@ function FooterSocial({ href, label, pending }: { href: string; label: string; p
   );
 }
 
-const copyrightYear = new Date().getFullYear();
-
 export function SiteFooter() {
-  const address = configuredContractAddress(siteConfig.contractAddress);
-
   return (
     <footer className="site-footer">
       <div className="container">
@@ -49,15 +45,6 @@ export function SiteFooter() {
             <FooterSocial href={siteConfig.xUrl} label="X" pending={placeholders.x} />
             <FooterSocial href={siteConfig.telegramUrl} label="Telegram" pending={placeholders.telegram} />
           </div>
-        </div>
-        <div className="footer-meta">
-          <p>
-            © {copyrightYear} {siteConfig.name} ·{" "}
-            <span className="footer-contract" data-state={address ? "configured" : "pending"}>
-              {address ?? placeholders.contract}
-            </span>
-          </p>
-          <p>Crypto assets are volatile. Do your own research.</p>
         </div>
       </div>
     </footer>

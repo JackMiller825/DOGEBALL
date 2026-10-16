@@ -18,7 +18,7 @@ export function TokenomicsSection() {
         {needsVerification ? (
           <p className="plan-status">Planned parameters · verify before publishing</p>
         ) : null}
-        <ul className="metric-grid" aria-describedby={needsVerification ? "tokenomics-disclaimer" : undefined}>
+        <ul className="metric-grid">
           {metrics.map((metric) => (
             <li className="metric-card" key={metric.id} data-verified={metric.verified ? "true" : "false"}>
               <span className="metric-index">{metric.index}</span>
@@ -28,15 +28,6 @@ export function TokenomicsSection() {
             </li>
           ))}
         </ul>
-        {needsVerification ? (
-          <div className="disclaimer" id="tokenomics-disclaimer">
-            <span className="disclaimer-mark" aria-hidden="true" />
-            <p>
-              *These are proposed defaults from the project brief, not independently verified on-chain facts. Publish
-              only after the contract is deployed and each setting or action is confirmed.
-            </p>
-          </div>
-        ) : null}
       </div>
     </section>
   );

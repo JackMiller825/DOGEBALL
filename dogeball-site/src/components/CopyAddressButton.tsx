@@ -13,7 +13,6 @@ export function CopyAddressButton() {
   const address = configuredContractAddress(siteConfig.contractAddress);
   const addressRef = useRef<HTMLElement>(null);
   const [toast, setToast] = useState<ToastState | null>(null);
-  const helpId = useId();
   const statusId = useId();
 
   useEffect(() => {
@@ -68,7 +67,7 @@ export function CopyAddressButton() {
           className="copy-button"
           onClick={copyAddress}
           disabled={!address}
-          aria-describedby={`${helpId} ${statusId}`}
+          aria-describedby={statusId}
           aria-label={
             address
               ? "Copy contract address"
@@ -78,9 +77,6 @@ export function CopyAddressButton() {
           COPY
         </button>
       </div>
-      <p className="contract-help" id={helpId}>
-        Check the official contract before you buy.
-      </p>
       <div className="toast-region" id={statusId} aria-live="polite" aria-atomic="true">
         {toast ? (
           <p className={toast.tone === "success" ? "toast" : "toast is-error"} role="status">

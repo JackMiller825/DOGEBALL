@@ -77,7 +77,6 @@ export function HowToBuySection() {
             </a>
           </p>
         ) : null}
-        <p className="playbook-note">Crypto assets are volatile. This is a visual guide, not financial advice.</p>
       </div>
     </section>
   );
