@@ -38,15 +38,19 @@ Official links must be absolute `http:` or `https:` URLs. A confirmed contract i
 
 Production files in `public/images/`:
 
-- `dogeball-logo-transparent.png` — header, footer, and the mascot artwork in the hero, story, and community sections
-- `dogeball-banner-3to1.png` — promo file only, not used as a page background
-- `dogeball-banner-1100x520.png` — social/Telegram promo file only, not placed in a homepage section
+- `dogeball-logo-transparent.png` — header and footer mark
+- `dogeball-hero-throw.png` — hero action crop from the 1100×520 banner
+- `dogeball-story-slide.png` — story crop from the 3:1 banner
+- `dogeball-scoreboard.png` — tokenomics crop from the 3:1 banner
+- `dogeball-ball.png` — how-to-buy crop from the 3:1 banner
+- `dogeball-community-hit.png` — community crop from the 3:1 banner
+- `dogeball-banner-3to1.png` and `dogeball-banner-1100x520.png` — source banners, kept for reference and not used as page backgrounds
 
 `public/favicon.png` is a 64×64 derivative of the transparent logo for the browser tab. The logo corners stay transparent.
 
 Unavailable:
 
-- `dogeball-mascot-cutout.png` was not in the brand archive. The transparent logo is the mascot fallback, with `object-fit: contain`.
+- `dogeball-mascot-cutout.png` was not in the brand archive. Section art is cropped from the two official banners so each section shows a different moment.
 - A dedicated 1200×630 Open Graph image is not included. The 1500×500 banner is 3:1 and would not crop cleanly to 1.91:1, so no Open Graph image is set and no canonical domain is invented.
 
 Design mockups live in `design-reference/dogeball-website-previews/` and are not part of the production page.

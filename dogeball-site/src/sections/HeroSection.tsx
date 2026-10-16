@@ -1,7 +1,8 @@
 import { BuyAction } from "../components/BuyAction.tsx";
 import { CopyAddressButton } from "../components/CopyAddressButton.tsx";
 import { Icon } from "../components/Icons.tsx";
-import { MascotImage } from "../components/MascotImage.tsx";
+import { SectionPhoto } from "../components/SectionPhoto.tsx";
+import { assetPaths } from "../config/site.ts";
 
 export function HeroSection() {
   return (
@@ -34,9 +35,12 @@ export function HeroSection() {
           <CopyAddressButton />
         </div>
         <div className="hero-art">
-          <MascotImage
+          <SectionPhoto
             priority
-            alt="DOGEBALL logo: an orange-and-cream Shiba in a cobalt headband and red referee jersey, holding an orange dodgeball."
+            src={assetPaths.hero}
+            width={460}
+            height={520}
+            alt="DOGEBALL lunging across the court and launching a flaming dodgeball."
           />
         </div>
       </div>

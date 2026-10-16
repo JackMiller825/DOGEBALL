@@ -40,6 +40,11 @@ export const assetPaths = {
   logo: `${publicBase}images/dogeball-logo-transparent.png`,
   banner3to1: `${publicBase}images/dogeball-banner-3to1.png`,
   bannerSocial: `${publicBase}images/dogeball-banner-1100x520.png`,
+  hero: `${publicBase}images/dogeball-hero-throw.png`,
+  story: `${publicBase}images/dogeball-story-slide.png`,
+  scoreboard: `${publicBase}images/dogeball-scoreboard.png`,
+  ball: `${publicBase}images/dogeball-ball.png`,
+  community: `${publicBase}images/dogeball-community-hit.png`,
 } as const;
 
 export const navItems = [

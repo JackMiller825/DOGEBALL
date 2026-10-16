@@ -1,6 +1,6 @@
-import { placeholders, siteConfig } from "../config/site.ts";
+import { assetPaths, placeholders, siteConfig } from "../config/site.ts";
 import { Icon, type IconName } from "../components/Icons.tsx";
-import { MascotImage } from "../components/MascotImage.tsx";
+import { SectionPhoto } from "../components/SectionPhoto.tsx";
 import { SectionHeading } from "../components/SectionHeading.tsx";
 import { officialHttpUrl } from "../lib/official.ts";
 
@@ -65,7 +65,12 @@ export function CommunitySection() {
             </div>
           </div>
           <div className="community-art">
-            <MascotImage alt="DOGEBALL mascot" />
+            <SectionPhoto
+              src={assetPaths.community}
+              width={520}
+              height={500}
+              alt="A dodgeball hitting the arena scoreboard as DOGEBALL slides in."
+            />
           </div>
         </div>
       </div>

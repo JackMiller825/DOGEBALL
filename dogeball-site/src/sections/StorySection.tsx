@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { Icon, type IconName } from "../components/Icons.tsx";
-import { MascotImage } from "../components/MascotImage.tsx";
+import { SectionPhoto } from "../components/SectionPhoto.tsx";
+import { assetPaths } from "../config/site.ts";
 import { SectionHeading } from "../components/SectionHeading.tsx";
 
 const beats = [
@@ -98,7 +99,12 @@ export function StorySection() {
           </div>
           <figure className="story-art">
             <figcaption className="confidence-badge">Confidence: 100%</figcaption>
-            <MascotImage alt="DOGEBALL mascot" />
+            <SectionPhoto
+              src={assetPaths.story}
+              width={500}
+              height={500}
+              alt="DOGEBALL sliding low with a fist raised as a dodgeball streaks past."
+            />
           </figure>
         </div>
         <ol className={revealClass} ref={listRef}>

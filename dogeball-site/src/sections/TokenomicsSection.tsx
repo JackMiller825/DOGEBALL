@@ -1,5 +1,7 @@
 import { Icon, type IconName } from "../components/Icons.tsx";
 import { SectionHeading } from "../components/SectionHeading.tsx";
+import { SectionPhoto } from "../components/SectionPhoto.tsx";
+import { assetPaths } from "../config/site.ts";
 import { tokenomicMetrics } from "../lib/tokenomics.ts";
 
 const metricIcons: Record<string, IconName> = {
@@ -16,6 +18,14 @@ export function TokenomicsSection() {
     <section className="tokenomics" id="tokenomics" aria-labelledby="tokenomics-title">
       <div className="container">
         <SectionHeading align="center" eyebrow="The scoreboard" titleId="tokenomics-title" title="Tokenomics" />
+        <figure className="score-banner">
+          <SectionPhoto
+            src={assetPaths.scoreboard}
+            width={250}
+            height={340}
+            alt="A dodgeball smashing into a glowing arena scoreboard."
+          />
+        </figure>
         <ul className="metric-grid">
           {metrics.map((metric) => (
             <li className="metric-card" key={metric.id} data-verified={metric.verified ? "true" : "false"}>
