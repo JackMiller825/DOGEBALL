@@ -1,7 +1,6 @@
-import { assetPaths, placeholders, siteConfig } from "../config/site.ts";
+import { placeholders, siteConfig } from "../config/site.ts";
 import { Icon, type IconName } from "../components/Icons.tsx";
 import { SectionHeading } from "../components/SectionHeading.tsx";
-import { SectionPhoto } from "../components/SectionPhoto.tsx";
 import { configuredContractAddress, officialHttpUrl } from "../lib/official.ts";
 
 const steps = [
@@ -48,9 +47,6 @@ export function HowToBuySection() {
     <section className="playbook" id="how-to-buy" aria-labelledby="how-to-buy-title">
       <div className="container">
         <SectionHeading align="center" eyebrow="Your four-play playbook" titleId="how-to-buy-title" title="How to Buy" />
-        <figure className="play-ball">
-          <SectionPhoto src={assetPaths.ball} width={280} height={300} alt="A flaming dodgeball in mid-flight." />
-        </figure>
         <ol className="step-grid">
           {steps.map((step) => (
             <li className="step-card" key={step.id}>

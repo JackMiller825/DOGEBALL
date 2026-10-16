@@ -41,8 +41,6 @@ Production files in `public/images/`:
 - `dogeball-logo-transparent.png` — header and footer mark
 - `dogeball-hero-throw.png` — hero action crop from the 1100×520 banner
 - `dogeball-story-slide.png` — story crop from the 3:1 banner
-- `dogeball-scoreboard.png` — tokenomics crop from the 3:1 banner
-- `dogeball-ball.png` — how-to-buy crop from the 3:1 banner
 - `dogeball-community-hit.png` — community crop from the 3:1 banner
 - `dogeball-banner-3to1.png` and `dogeball-banner-1100x520.png` — source banners, kept for reference and not used as page backgrounds
 

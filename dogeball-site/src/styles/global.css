@@ -794,43 +794,6 @@ section[id] {
   transition-delay: 160ms;
 }
 
-.score-banner {
-  width: min(300px, 100%);
-  margin: 6px auto 28px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 140, 24, 0.45);
-  border-radius: 28px;
-  box-shadow:
-    0 0 0 8px rgba(255, 140, 24, 0.08),
-    0 16px 36px rgba(0, 0, 0, 0.3);
-}
-
-.score-banner .section-photo {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 250 / 340;
-  object-fit: cover;
-}
-
-.play-ball {
-  width: 188px;
-  height: 188px;
-  margin: 4px auto 26px;
-  overflow: hidden;
-  border: 3px solid var(--orange);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 8px rgba(255, 140, 24, 0.14),
-    0 16px 30px rgba(0, 0, 0, 0.35);
-}
-
-.play-ball .section-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 .metric-grid,
 .step-grid {
   display: grid;

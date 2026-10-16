@@ -42,8 +42,6 @@ export const assetPaths = {
   bannerSocial: `${publicBase}images/dogeball-banner-1100x520.png`,
   hero: `${publicBase}images/dogeball-hero-throw.png`,
   story: `${publicBase}images/dogeball-story-slide.png`,
-  scoreboard: `${publicBase}images/dogeball-scoreboard.png`,
-  ball: `${publicBase}images/dogeball-ball.png`,
   community: `${publicBase}images/dogeball-community-hit.png`,
 } as const;
 
