@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
+import { Icon, type IconName } from "../components/Icons.tsx";
 import { MascotImage } from "../components/MascotImage.tsx";
 import { SectionHeading } from "../components/SectionHeading.tsx";
 
@@ -7,6 +8,7 @@ const beats = [
     id: "warm-up",
     index: "01",
     label: "WARM-UP",
+    icon: "flame" satisfies IconName,
     title: "Eleven-minute legend",
     body: "He watched one tutorial, tied his headband, and declared himself “basically ready.”",
   },
@@ -14,6 +16,7 @@ const beats = [
     id: "dodge",
     index: "02",
     label: "THE DODGE",
+    icon: "dodge" satisfies IconName,
     title: "Confidence: 100%",
     body: "Every opponent throws. DOGEBALL turns a simple sidestep into a full arena highlight.",
   },
@@ -21,6 +24,7 @@ const beats = [
     id: "finish",
     index: "03",
     label: "THE FINISH",
+    icon: "trophy" satisfies IconName,
     title: "No-look. No notes.",
     body: "A trick shot lands. The scoreboard blinks. DOGEBALL asks if anyone got that on camera.",
   },
@@ -88,7 +92,8 @@ export function StorySection() {
               launched a no-look winner while everyone was still dodging the wrong way.
             </p>
             <a className="text-action" href="#tokenomics">
-              See the game plan ↓
+              See the game plan
+              <Icon name="down" />
             </a>
           </div>
           <figure className="story-art">
@@ -100,7 +105,10 @@ export function StorySection() {
           {beats.map((beat) => (
             <li className="beat" key={beat.id}>
               <p className="beat-kicker">
-                {beat.index} / {beat.label}
+                <Icon name={beat.icon} />
+                <span>
+                  {beat.index} / {beat.label}
+                </span>
               </p>
               <h3>{beat.title}</h3>
               <p>{beat.body}</p>

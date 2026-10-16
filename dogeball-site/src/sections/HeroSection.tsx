@@ -1,5 +1,6 @@
 import { BuyAction } from "../components/BuyAction.tsx";
 import { CopyAddressButton } from "../components/CopyAddressButton.tsx";
+import { Icon } from "../components/Icons.tsx";
 import { MascotImage } from "../components/MascotImage.tsx";
 
 export function HeroSection() {
@@ -23,18 +24,16 @@ export function HeroSection() {
           <div className="hero-actions">
             <BuyAction className="btn btn-primary">
               Get DOGEBALL
-              <span className="btn-arrow" aria-hidden="true">
-                →
-              </span>
+              <Icon name="arrow" className="btn-arrow" />
             </BuyAction>
             <a className="btn btn-ghost" href="#story">
-              Meet the legend ↓
+              Meet the legend
+              <Icon name="down" />
             </a>
           </div>
           <CopyAddressButton />
         </div>
         <div className="hero-art">
-          <p className="mascot-tag">Dodge first. Ask questions never.</p>
           <MascotImage
             priority
             alt="DOGEBALL logo: an orange-and-cream Shiba in a cobalt headband and red referee jersey, holding an orange dodgeball."

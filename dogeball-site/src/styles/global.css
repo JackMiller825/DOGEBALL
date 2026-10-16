@@ -173,7 +173,7 @@ section[id] {
 }
 
 .btn-arrow {
-  display: inline-block;
+  width: 1.15em;
   max-width: 0;
   overflow: hidden;
   opacity: 0;
@@ -210,8 +210,11 @@ section[id] {
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-family: var(--display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
 }
 
 .brand img {
@@ -364,10 +367,16 @@ section[id] {
   color: var(--gold);
 }
 
+.menu-link-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .menu-chevron {
+  width: 1.15rem;
+  height: 1.15rem;
   color: var(--cyan);
-  font-size: 1.4rem;
-  line-height: 1;
 }
 
 .hero {
@@ -410,11 +419,28 @@ section[id] {
 }
 
 .hero-copy h1,
+.section-heading h2,
+.beat h3,
+.step-card h3,
+.metric-value,
+.confidence-badge,
+.social-word,
+.footer-social {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.social-word {
+  min-width: 5.5rem;
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
+.hero-copy h1,
 .section-heading h2 {
-  font-size: clamp(2.6rem, 6vw, 5.6rem);
-  font-weight: 800;
-  letter-spacing: -0.055em;
-  line-height: 0.92;
+  font-size: clamp(4rem, 8vw, 7.2rem);
+  line-height: 0.88;
 }
 
 .lede,
@@ -534,18 +560,10 @@ section[id] {
   justify-items: center;
 }
 
-.mascot-tag {
-  justify-self: end;
-  margin: 0 0 8px;
-  padding: 8px 14px;
-  border: 1px solid rgba(36, 69, 110, 0.9);
-  border-radius: 999px;
-  background: rgba(8, 29, 61, 0.72);
-  color: var(--cream);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
 }
 
 .mascot-image {
@@ -576,7 +594,7 @@ section[id] {
 }
 
 .section-heading h2 {
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
 }
 
 .section-intro {
@@ -594,6 +612,7 @@ section[id] {
 .text-action {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   min-height: 44px;
   margin-top: 18px;
   color: var(--cream);
@@ -653,6 +672,9 @@ section[id] {
 }
 
 .beat-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--orange);
   font-size: 0.78rem;
   font-weight: 800;
@@ -662,9 +684,8 @@ section[id] {
 .beat h3,
 .step-card h3 {
   margin-top: 10px;
-  font-size: 1.35rem;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: 1.85rem;
+  line-height: 1;
 }
 
 .beat p:last-child,
@@ -723,15 +744,36 @@ section[id] {
   padding: 18px 18px 16px;
 }
 
+.mark-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mark-num {
+  color: var(--muted);
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
 .metric-index,
 .step-index {
   display: inline-grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   font-size: 0.75rem;
   font-weight: 800;
+}
+
+.metric-index .icon,
+.step-index .icon {
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
 .metric-index {
@@ -747,10 +789,8 @@ section[id] {
 .metric-value {
   margin-top: 22px;
   color: var(--gold);
-  font-size: clamp(1.2rem, 2vw, 1.9rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  line-height: 0.95;
   overflow-wrap: anywhere;
 }
 
@@ -793,6 +833,7 @@ section[id] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   min-height: 36px;
   margin-top: auto;
   padding: 8px 10px;
@@ -862,11 +903,6 @@ section[id] {
   align-items: center;
 }
 
-.footer-brand p {
-  margin: 8px 0 0 52px;
-  color: var(--muted);
-}
-
 .site-footer nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -898,9 +934,9 @@ section[id] {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-weight: 800;
+  font-size: 1.7rem;
+  line-height: 1;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .footer-social.is-pending {
@@ -977,11 +1013,7 @@ section[id] {
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.7rem, 12vw, 4.4rem);
-  }
-
-  .mascot-tag {
-    justify-self: center;
+    font-size: clamp(3.6rem, 18vw, 5rem);
   }
 
   .community-panel {
@@ -992,10 +1024,6 @@ section[id] {
   .footer-meta {
     grid-template-columns: 1fr;
     display: grid;
-  }
-
-  .footer-brand p {
-    margin-left: 0;
   }
 
   .site-footer nav ul {

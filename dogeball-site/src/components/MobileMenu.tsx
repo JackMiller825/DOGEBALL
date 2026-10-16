@@ -1,6 +1,15 @@
 import { useEffect, useRef, type RefObject } from "react";
 import { createPortal } from "react-dom";
 import { navItems, type SectionId } from "../config/site.ts";
+import { Icon, type IconName } from "./Icons.tsx";
+
+const sectionIcons: Record<SectionId, IconName> = {
+  home: "home",
+  story: "whistle",
+  tokenomics: "scoreboard",
+  "how-to-buy": "wallet",
+  community: "users",
+};
 
 type MobileMenuProps = {
   open: boolean;
@@ -76,10 +85,11 @@ export function MobileMenu({ open, activeId, onClose, returnFocusRef }: MobileMe
                   aria-current={item.id === activeId ? "location" : undefined}
                   onClick={onClose}
                 >
-                  <span>{item.label}</span>
-                  <span className="menu-chevron" aria-hidden="true">
-                    ›
+                  <span className="menu-link-label">
+                    <Icon name={sectionIcons[item.id]} />
+                    <span>{item.label}</span>
                   </span>
+                  <Icon name="arrow" className="menu-chevron" />
                 </a>
               </li>
             ))}

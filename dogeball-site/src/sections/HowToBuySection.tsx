@@ -1,4 +1,5 @@
 import { placeholders, siteConfig } from "../config/site.ts";
+import { Icon, type IconName } from "../components/Icons.tsx";
 import { SectionHeading } from "../components/SectionHeading.tsx";
 import { configuredContractAddress, officialHttpUrl } from "../lib/official.ts";
 
@@ -9,6 +10,7 @@ const steps = [
     title: "Set up a wallet",
     body: "Choose a self-custody wallet that supports the confirmed token network.",
     chip: "WALLET",
+    icon: "wallet" satisfies IconName,
   },
   {
     id: "funds",
@@ -16,6 +18,7 @@ const steps = [
     title: "Add network funds",
     body: "Keep enough of the network’s native token for your swap and gas fees.",
     chip: "GAS READY",
+    icon: "coins" satisfies IconName,
   },
   {
     id: "buy",
@@ -23,6 +26,7 @@ const steps = [
     title: "Open official buy link",
     body: "Use the project’s verified swap destination once it is published.",
     chip: placeholders.buy,
+    icon: "link" satisfies IconName,
   },
   {
     id: "contract",
@@ -30,6 +34,7 @@ const steps = [
     title: "Check the contract",
     body: "Match the token address exactly. If it differs, stop and verify.",
     chip: placeholders.contract,
+    icon: "shield" satisfies IconName,
   },
 ] as const;
 
@@ -51,12 +56,17 @@ export function HowToBuySection() {
         <ol className="step-grid">
           {steps.map((step) => (
             <li className="step-card" key={step.id}>
-              <span className="step-index">{step.index}</span>
+              <span className="mark-row">
+                <span className="step-index">
+                  <Icon name={step.icon} />
+                </span>
+                <span className="mark-num">{step.index}</span>
+              </span>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
               {step.id === "buy" && buyUrl ? (
                 <a className="step-chip" href={buyUrl} target="_blank" rel="noopener noreferrer">
-                  Open buy link <span aria-hidden="true">↗</span>
+                  Open buy link <Icon name="arrow" />
                   <span className="visually-hidden"> (opens in a new tab)</span>
                 </a>
               ) : step.id === "contract" && address ? (
@@ -72,7 +82,7 @@ export function HowToBuySection() {
         {chartUrl ? (
           <p className="chart-link">
             <a href={chartUrl} target="_blank" rel="noopener noreferrer">
-              View chart <span aria-hidden="true">↗</span>
+              View chart <Icon name="arrow" />
               <span className="visually-hidden"> (opens in a new tab)</span>
             </a>
           </p>

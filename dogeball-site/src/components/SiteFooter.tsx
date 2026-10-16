@@ -1,21 +1,29 @@
 import { assetPaths, navItems, placeholders, siteConfig } from "../config/site.ts";
 import { officialHttpUrl } from "../lib/official.ts";
 
-function FooterSocial({ href, label, pending }: { href: string; label: string; pending: string }) {
+function FooterSocial({
+  href,
+  label,
+  name,
+  pending,
+}: {
+  href: string;
+  label: string;
+  name: string;
+  pending: string;
+}) {
   const url = officialHttpUrl(href);
   if (!url) {
     return (
-      <span className="footer-social is-pending">
-        {label} <span aria-hidden="true">↗</span>
-        <span className="visually-hidden"> {pending} pending</span>
+      <span className="footer-social is-pending" aria-label={`${name}, ${pending} pending`}>
+        {label}
       </span>
     );
   }
 
   return (
-    <a className="footer-social" href={url} target="_blank" rel="noopener noreferrer">
-      {label} <span aria-hidden="true">↗</span>
-      <span className="visually-hidden"> (opens in a new tab)</span>
+    <a className="footer-social" href={url} target="_blank" rel="noopener noreferrer" aria-label={`${name}, opens in a new tab`}>
+      {label}
     </a>
   );
 }
@@ -30,7 +38,6 @@ export function SiteFooter() {
               <img src={assetPaths.logo} alt="" width={1024} height={1024} decoding="async" />
               <span>{siteConfig.name}</span>
             </a>
-            <p>The court is open.</p>
           </div>
           <nav aria-label="Footer sections">
             <ul>
@@ -42,8 +49,8 @@ export function SiteFooter() {
             </ul>
           </nav>
           <div className="footer-socials">
-            <FooterSocial href={siteConfig.xUrl} label="X" pending={placeholders.x} />
-            <FooterSocial href={siteConfig.telegramUrl} label="Telegram" pending={placeholders.telegram} />
+            <FooterSocial href={siteConfig.xUrl} label="X" name="Follow on X" pending={placeholders.x} />
+            <FooterSocial href={siteConfig.telegramUrl} label="TG" name="Join Telegram" pending={placeholders.telegram} />
           </div>
         </div>
       </div>

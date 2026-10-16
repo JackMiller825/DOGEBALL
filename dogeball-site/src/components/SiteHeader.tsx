@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { assetPaths, navItems, siteConfig } from "../config/site.ts";
 import { useActiveSection } from "../hooks/useActiveSection.ts";
 import { BuyAction } from "./BuyAction.tsx";
+import { Icon } from "./Icons.tsx";
 import { MobileMenu } from "./MobileMenu.tsx";
 
 export function SiteHeader() {
@@ -39,9 +40,7 @@ export function SiteHeader() {
         </nav>
         <BuyAction className="btn btn-primary header-cta">
           Get DOGEBALL
-          <span className="btn-arrow" aria-hidden="true">
-            →
-          </span>
+          <Icon name="arrow" className="btn-arrow" />
         </BuyAction>
         <button
           type="button"
