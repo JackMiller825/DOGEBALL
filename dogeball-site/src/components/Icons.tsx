@@ -16,7 +16,9 @@ export type IconName =
   | "link"
   | "shield"
   | "arrow"
-  | "down";
+  | "down"
+  | "x"
+  | "telegram";
 
 type IconProps = {
   name: IconName;
@@ -116,4 +118,16 @@ const paths: Record<IconName, ReactNode> = {
   ),
   arrow: <path {...stroke} d="M5 12h14M13 6l6 6-6 6" />,
   down: <path {...stroke} d="M12 5v14M6 13l6 6 6-6" />,
+  x: (
+    <path
+      fill="currentColor"
+      d="M14.23 10.16 21.54 2h-1.73l-6.35 7.08L8.3 2H2.2l7.66 10.72L2.2 22h1.74l6.7-7.47L15.7 22h6.1L14.23 10.16Zm-2.37 2.64-.78-1.07-6.17-8.5h2.66l4.98 6.86.78 1.07 6.48 8.92h-2.66l-5.29-7.28Z"
+    />
+  ),
+  telegram: (
+    <path
+      fill="currentColor"
+      d="M21.55 3.48 2.86 10.72c-1.28.5-1.27 1.2-.23 1.51l4.82 1.5 11.15-7.03c.53-.32.99-.15.6.21l-9.03 8.16-.34 4.86c.5 0 .72-.23.99-.5l2.39-2.32 4.97 3.67c.91.5 1.57.24 1.8-.85l3.26-15.36c.33-1.34-.51-1.95-1.7-1.59Z"
+    />
+  ),
 };

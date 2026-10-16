@@ -1,4 +1,5 @@
 import { placeholders, siteConfig } from "../config/site.ts";
+import { Icon, type IconName } from "../components/Icons.tsx";
 import { MascotImage } from "../components/MascotImage.tsx";
 import { SectionHeading } from "../components/SectionHeading.tsx";
 import { officialHttpUrl } from "../lib/official.ts";
@@ -6,33 +7,34 @@ import { officialHttpUrl } from "../lib/official.ts";
 function CommunityAction({
   href,
   label,
-  text,
+  icon,
   pending,
 }: {
   href: string;
   label: string;
-  text: string;
+  icon: IconName;
   pending: string;
 }) {
   const url = officialHttpUrl(href);
+  const mark = <Icon name={icon} />;
 
   if (!url) {
     return (
-      <button type="button" className="btn btn-ghost social-word" disabled aria-label={`${label}, ${pending} pending`}>
-        {text}
+      <button type="button" className="btn btn-ghost social-icon" disabled aria-label={`${label}, ${pending} pending`}>
+        {mark}
       </button>
     );
   }
 
   return (
     <a
-      className="btn btn-ghost social-word"
+      className="btn btn-ghost social-icon"
       href={url}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${label}, opens in a new tab`}
     >
-      {text}
+      {mark}
     </a>
   );
 }
@@ -58,8 +60,8 @@ export function CommunitySection() {
               Follow the official channels for launch updates, community events, and the next DOGEBALL highlight reel.
             </p>
             <div className="community-actions">
-              <CommunityAction href={siteConfig.xUrl} label="Follow on X" text="X" pending={placeholders.x} />
-              <CommunityAction href={siteConfig.telegramUrl} label="Join Telegram" text="TG" pending={placeholders.telegram} />
+              <CommunityAction href={siteConfig.xUrl} label="Follow on X" icon="x" pending={placeholders.x} />
+              <CommunityAction href={siteConfig.telegramUrl} label="Join Telegram" icon="telegram" pending={placeholders.telegram} />
             </div>
           </div>
           <div className="community-art">

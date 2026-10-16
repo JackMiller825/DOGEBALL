@@ -32,20 +32,49 @@ export function CopyAddressButton() {
     selection.addRange(range);
   }
 
+  function copyWithSelection(value: string) {
+    const field = document.createElement("textarea");
+    field.value = value;
+    field.setAttribute("readonly", "");
+    field.style.position = "fixed";
+    field.style.top = "0";
+    field.style.left = "0";
+    field.style.opacity = "0";
+    document.body.appendChild(field);
+    field.focus();
+    field.select();
+    let copied = false;
+    try {
+      copied = document.execCommand("copy");
+    } catch {
+      copied = false;
+    }
+    field.remove();
+    return copied;
+  }
+
   async function copyAddress() {
-    if (!address) return;
+    const value = address ?? placeholders.contract;
+    const message = address ? "Contract address copied" : "Copied";
+    const legacyCopied = copyWithSelection(value);
 
     try {
       if (!navigator.clipboard?.writeText) {
         throw new Error("Clipboard API unavailable");
       }
-      await navigator.clipboard.writeText(address);
-      setToast({ tone: "success", message: "Contract address copied" });
+      await navigator.clipboard.writeText(value);
+      window.getSelection()?.removeAllRanges();
+      setToast({ tone: "success", message });
     } catch {
+      if (legacyCopied) {
+        window.getSelection()?.removeAllRanges();
+        setToast({ tone: "success", message });
+        return;
+      }
       selectAddress();
       setToast({
         tone: "error",
-        message: "Copy failed. The address is selected so you can copy it manually.",
+        message: "Copy failed. The text is selected so you can copy it manually.",
       });
     }
   }
@@ -66,13 +95,8 @@ export function CopyAddressButton() {
           type="button"
           className="copy-button"
           onClick={copyAddress}
-          disabled={!address}
           aria-describedby={statusId}
-          aria-label={
-            address
-              ? "Copy contract address"
-              : "Copy contract address, unavailable until an address is published"
-          }
+          aria-label={address ? "Copy contract address" : "Copy Coming Soon"}
         >
           COPY
         </button>

@@ -46,13 +46,7 @@ export function HowToBuySection() {
   return (
     <section className="playbook" id="how-to-buy" aria-labelledby="how-to-buy-title">
       <div className="container">
-        <SectionHeading
-          align="center"
-          eyebrow="Your four-play playbook"
-          titleId="how-to-buy-title"
-          title="How to Buy"
-          intro="Take it one step at a time, and verify the official token address before every swap."
-        />
+        <SectionHeading align="center" eyebrow="Your four-play playbook" titleId="how-to-buy-title" title="How to Buy" />
         <ol className="step-grid">
           {steps.map((step) => (
             <li className="step-card" key={step.id}>

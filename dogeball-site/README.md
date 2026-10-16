@@ -19,7 +19,7 @@ Edit only `src/config/site.ts`. Leave a field empty, and leave its `verified` fl
 
 | Key | Current value | Shown until confirmed |
 | --- | --- | --- |
-| `contractAddress` | empty | `[CONTRACT_ADDRESS]`, copy disabled |
+| `contractAddress` | empty | `Coming Soon..`, and the copy button copies that text |
 | `buyUrl` | empty | Get DOGEBALL scrolls to `#how-to-buy`; buy chip shows `[BUY_LINK]` |
 | `chartUrl` | empty | no chart control |
 | `xUrl` | empty | `[X_URL]`, Follow on X is not a link |
@@ -30,9 +30,9 @@ Edit only `src/config/site.ts`. Leave a field empty, and leave its `verified` fl
 | `tokenomics.liquidity` | `LP Burn planned` | scoreboard shows `LP Burn*` until `verified.liquidity` is set |
 | `tokenomics.ownership` | `Renounce planned` | scoreboard shows `Renounce*` until `verified.ownership` is set |
 
-When a tokenomics item is confirmed, set that item’s `verified` flag to `true` and replace the string with the confirmed wording. The section disclaimer stays until every flag is true. Do not mark liquidity burned or ownership renounced unless that action has actually happened.
+When a tokenomics item is confirmed, set that item’s `verified` flag to `true` and replace the string with the confirmed wording. Do not mark liquidity burned or ownership renounced unless that action has actually happened.
 
-Official links must be absolute `http:` or `https:` URLs. The contract copy control accepts a `0x` address with 40 hex characters and copies that exact value.
+Official links must be absolute `http:` or `https:` URLs. A confirmed contract is a `0x` address with 40 hex characters, and the copy button copies that exact value. Until then it copies `Coming Soon..`.
 
 ## Assets
 

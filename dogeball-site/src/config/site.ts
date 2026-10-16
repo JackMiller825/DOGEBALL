@@ -27,7 +27,7 @@ export const siteConfig = {
 } as const;
 
 export const placeholders = {
-  contract: "[CONTRACT_ADDRESS]",
+  contract: "Coming Soon..",
   buy: "[BUY_LINK]",
   chart: "[CHART_LINK]",
   x: "[X_URL]",
