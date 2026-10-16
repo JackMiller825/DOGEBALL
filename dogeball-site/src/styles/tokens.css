@@ -1,0 +1,20 @@
+:root {
+  --navy: #06132b;
+  --deep: #081d3d;
+  --panel: #10294c;
+  --panel-deep: #0c2144;
+  --cyan: #18b9ff;
+  --orange: #ff8c18;
+  --orange-hot: #ff9f3c;
+  --gold: #ffd454;
+  --cream: #fff4df;
+  --muted: #b7c8df;
+  --line: #24456e;
+  --red: #e54142;
+  --header: 76px;
+  --content: 1180px;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --font: Inter, ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
