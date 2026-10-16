@@ -2,9 +2,12 @@ import { BuyAction } from "../components/BuyAction.tsx";
 import { CopyAddressButton } from "../components/CopyAddressButton.tsx";
 import { Icon } from "../components/Icons.tsx";
 import { SectionPhoto } from "../components/SectionPhoto.tsx";
+import { useTilt } from "../components/useTilt.ts";
 import { assetPaths } from "../config/site.ts";
 
 export function HeroSection() {
+  const tilt = useTilt<HTMLDivElement>(14);
+
   return (
     <section className="hero" id="home" aria-labelledby="home-title">
       <div className="court-lines" aria-hidden="true" />
@@ -34,7 +37,7 @@ export function HeroSection() {
           </div>
           <CopyAddressButton />
         </div>
-        <div className="hero-art">
+        <div className="hero-art" {...tilt}>
           <SectionPhoto
             priority
             src={assetPaths.hero}

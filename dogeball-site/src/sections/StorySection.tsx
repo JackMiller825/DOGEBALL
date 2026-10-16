@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { Icon, type IconName } from "../components/Icons.tsx";
 import { SectionPhoto } from "../components/SectionPhoto.tsx";
+import { useTilt } from "../components/useTilt.ts";
 import { assetPaths } from "../config/site.ts";
 import { SectionHeading } from "../components/SectionHeading.tsx";
 
@@ -67,6 +68,7 @@ export function StorySection() {
   }, []);
 
   const revealClass = armed ? (visible ? "beats is-armed is-visible" : "beats is-armed") : "beats";
+  const tilt = useTilt<HTMLElement>(8);
 
   return (
     <section className="story" id="story" aria-labelledby="story-title">
@@ -97,7 +99,7 @@ export function StorySection() {
               <Icon name="down" />
             </a>
           </div>
-          <figure className="story-art">
+          <figure className="story-art" {...tilt}>
             <figcaption className="confidence-badge">Confidence: 100%</figcaption>
             <SectionPhoto
               src={assetPaths.story}

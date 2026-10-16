@@ -410,6 +410,7 @@ section[id] {
   grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
   gap: 40px;
   align-items: center;
+  perspective: 1200px;
 }
 
 .hero-copy,
@@ -795,6 +796,12 @@ section[id] {
 }
 
 .metric-grid,
+.step-grid,
+.beats {
+  perspective: 1400px;
+}
+
+.metric-grid,
 .step-grid {
   display: grid;
   gap: 16px;
@@ -1128,20 +1135,30 @@ section[id] {
     background: rgba(24, 185, 255, 0.08);
   }
 
+  .hero-art,
+  .story-art,
+  .community-art,
+  .beat,
+  .metric-card,
+  .step-card {
+    transform-style: preserve-3d;
+    transition: transform 180ms ease;
+  }
+
   .beat:hover,
   .beats.is-armed.is-visible .beat:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px) rotateX(8deg);
   }
 
   .metric-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px) rotateX(8deg) rotateY(-7deg);
     box-shadow:
       inset 0 0 0 1px var(--gold),
       inset 0 0 0 7px rgba(6, 19, 43, 0.55);
   }
 
   .step-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px) rotateX(9deg);
   }
 }
 

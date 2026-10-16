@@ -1,6 +1,7 @@
 import { assetPaths, placeholders, siteConfig } from "../config/site.ts";
 import { Icon, type IconName } from "../components/Icons.tsx";
 import { SectionPhoto } from "../components/SectionPhoto.tsx";
+import { useTilt } from "../components/useTilt.ts";
 import { SectionHeading } from "../components/SectionHeading.tsx";
 import { officialHttpUrl } from "../lib/official.ts";
 
@@ -40,6 +41,8 @@ function CommunityAction({
 }
 
 export function CommunitySection() {
+  const tilt = useTilt<HTMLDivElement>(10);
+
   return (
     <section className="community" id="community" aria-labelledby="community-title">
       <div className="container">
@@ -64,7 +67,7 @@ export function CommunitySection() {
               <CommunityAction href={siteConfig.telegramUrl} label="Join Telegram" icon="telegram" pending={placeholders.telegram} />
             </div>
           </div>
-          <div className="community-art">
+          <div className="community-art" {...tilt}>
             <SectionPhoto
               src={assetPaths.community}
               width={520}
